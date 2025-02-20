@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 2</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 2</small>
+			Exploratory Data Analysis
+		</h1>
+
+		<p>
+			<strong>Emily Gan</strong> — <em>emilygan@mit.edu</em>
+		</p>
+	</header>
+	<main>
+		<section>
+			<h2>Subtheme: Transit-Oriented Development</h2>
+
+			<h3>Overall Analysis Questions</h3>
+			<ol>
+				<li><strong>What is the current density of housing around MBTA communities?</strong>Who lives in the Greater Boston Area and what sort of zoning and housing do they occupy?</li>
+				<li><strong>Which communities and demographics would be impacted by high-density housing in MBTA communities, especially in places which oppose adoption of TOD?</strong>  The subtheme reading states that there has been differences in adoption across different towns. For example, inner Boston has smoothly adopted TOD, but Milton opposes it.</li>
+				<li><strong>Can we tell the reasoning for opposition using the demographic makeup of the town?</strong></li>
+			</ol>
+		</section>
+
+		<section>
+			<h2>Data</h2>
+
+			<p>I used the MBTA stops collapsed dataset and the single family zoning dataset. I aggregated the latter over municipalities, summing relevant columns and calculating percentages based on aggregate numbers per municipality. It would have been nice to have data for each MBTA stop with the half-mile buffer, but since the data was given at the municipality granularity, this was the level I chose to work with.</p>
+
+			<h2>Methods</h2>
+
+			<p>I used Bokeh, an interactive Python library for plotting. I started with the municipality regions and tried to overlay it over the OpenStreetMap tile over the Greater Boston Metropolitan Area, along with the MBTA stops. I noticed that these datasets use different coordinate systems, so I converted all to Web Mercator (WGS84) using the package pyproj. To get bounds for the figures in Web Mercator coordinates, I used the online converter <a href="https://xyconverter.com/">XY Converter</a>.</p>
+		</section>
+
+		<section>
+			<h2>Discoveries & Insights</h2>
+
+			<figure>
+				<center>
+					<embed src="has_MBTA_community.html" type="text/html" width="100%" height="650"/>
+				</center>
+				<figcaption>
+					<strong>Municipalities of Greater Boston colored by whether or not an MBTA community exists in the municipality, with MBTA stops overlaid.</strong> Municipalities that are considered MBTA communities, and therefore are subject to the MBTA's transit-oriented development policies, are highlighted in green. The only municipalities without MBTA communities are Bolton, Hudson, Milford, and Boston.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<center>
+					<embed src="%_single_family.html" type="text/html" width="100%" height="650"/>
+				</center>
+				<figcaption>
+					<strong>Percentage of residential land zoned exclusively for single-family homes per municipality in Greater Boston.</strong> The percentage of single-family homes is calculated as the land area zoned for single-family housing divided by the land area of all residential zoning in each municipality. We know Milton is a town that opposes TOD and can observe that it primarily consists of single-family zoning and in order to comply with TOD, it would have to change residential zoning in its town. I was surprised at how many towns have a high percentage of single-family zoning.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<center>
+					<embed src="%_fhh.html" type="text/html" width="100%" height="650"/>
+				</center>
+				<figcaption>
+					<strong>Percentage of total households that are family households per municipality in Greater Boston.</strong> I find it interesting that despite single-family zoning land use from the previous figure, the percentage of family households is generally under 20%. Using Milton as the case example of a municipality which opposes transit-oriented development, it is <italic>also</italic> low in family households, which begs the question of why they oppose TOD. The US Census definition for a non-family household is "a householder living alone (a one-person household) or where the householder shares the home exclusively with people to whom he/she is not related" (<a href="https://www.census.gov/programs-surveys/cps/technical-documentation/subject-definitions.html#householdnonfamily">Household, nonfamily</a>). I was therefore motivated to see how many of these homeowners live alone, and perhaps oppose TOD to protect their property values.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<center>
+					<embed src="%_nfhh1.html" type="text/html" width="100%" height="650"/>
+				</center>
+				<figcaption>
+					<strong>Percentage of total households that are nonfamily households with one resident per municipality in Greater Boston.</strong> Indeed, Milton has a high percentage of single-family zoning and a high percentage of nonfamily households with one resident. This could be a reason why Milton opposes TOD. As a sanity check, Boston has the highest percentage of nonfamily households with one resident, likely due to prevalence of apartments, dorms, and other student living quarters.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<center>
+					<embed src="%_hh_u100.html" type="text/html" width="100%" height="650"/>
+				</center>
+				<figcaption>
+					<strong>Percentage of households that make under $100,000 annually.</strong> In fact, the richest communities seem to be on the outskirts of the Greater Boston area. Milton is not particularly wealthy.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<center>
+					<embed src="%_nwhite.html" type="text/html" width="100%" height="650"/>
+				</center>
+				<figcaption>
+					<strong>Percentage of residents that are not white.</strong> The Greater Boston area is majority white, but there are some towns with a significant percentage of non-white residents. Milton is not one of them.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<center>
+					<embed src="%_pop_65o.html" type="text/html" width="100%" height="650"/>
+				</center>
+				<figcaption>
+					<strong>Percentage of population that is over 65 years of age.</strong> Milton has a high percentage of residents over 65 years of age. This could be part of the reason why they oppose TOD, since public transportation probably primarily serves as a way to commute for school or work, and the current population may not have as much of a need for it.
+				</figcaption>
+			</figure>
+
+		</section>
+
+		<section>
+			<h2>Summary</h2>
+
+			<p>The single-family zoning of residential land is clearly one major obstacle of transit-oriented development, as it restricts the density of housing in MBTA communities. Using Milton as a case study of opposition, we see a large percentage of land use is for single-family housing, despite most households being categorized as non-family. There is clearly some friction between the intention of the zoning restriction of housing types and their in-practice usage. Age could also play a role in the opposition. </p>
+		</section>
+	</main>
+</body>
+</html>
