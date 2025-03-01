@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 3</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 3</small>
+			Visualization Critique & Redesign
+		</h1>
+
+		<p>
+			<strong>Emily Gan</strong> — <em>emilygan@mit.edu</em>
+		</p>
+	</header>
+
+	<main>
+		<section>
+			<h2>Reading & Critique</h2>
+
+			<figure>
+				<img width="100%" height="100%" src="https://vis-society.github.io/assets/imgs/covid-spiral.png" alt="New Covid-19 cases spiral graph"/>
+			</figure>
+
+			<p>
+				Insights about the data/visualization:
+			</p>
+
+			<ul>
+				<li>Organizing the timeline as a spiral caught my attention, since it is a different format than I would typically expect. However, lining up the years so that months align makes me think that there should be a monthly trend, which is sort of lacking. There is somewhat a trend of increased new Covid-19 cases in the winter months, as we can see from 2021 and 2022, however otherwise the month-on-month organization does not seem to provide that many more additional insights.</li>
+
+				<li>Between June and July of 2021, there is a really strong narrowing of new cases. This seems to be the smallest number of new Covid-19 cases since the outbreak. Then, from July to November, there is another wave of infections, which narrows again.</li>
+
+				<li>Finally, starting November 2021, there begins a new widening of the figure, which then grows exponentially between December and January of 2022, becoming the widest point of the graph. Since it is the end of the graphic's timeline, we do not know where it leads, but it bodes poorly for the stop of the spread of Covid-19. </li>
+			</ul>
+
+			<p>
+				Design Critique:
+			</p>
+
+			<ul>
+				<li>The spiral design makes it so that the timescale of more recent years is different from previous years. At first glance, it is not clear whether the width is scaled too, although the legend suggests otherwise. I find myself unsure if the width is symmetric across the black centerline of the spiral, since the edge of the graph on the inside of the spiral changes faster than the outside. I think it would be nice if the width was added to just one side of the spiral, instead of symmetric across as the visual contrast would be easier to perceive. However, I do think that organization of the data as a spiral puts the emphasis on the outermost layer of the spiral, which is relatively the largest and most detailed section, in addition to the most recent. Upon reading the article, it is also clear that this was the intended focus. </li>
+
+				<li>While the sparsity of features on the graph makes it easy to focus on the relative width across different points in the timeline, it doesn't capture a lot of the logistical points brought up in the <a href="https://www.nytimes.com/2022/01/06/opinion/omicron-covid-us.html?unlocked_article_code=1.zk4.stTQ.3bTjWtsFU-ls&smid=url-share" target="blank">article</a>. For example, the article mentions that the summer is less favorable for virus transmission. This could be indicated by a background shade, in which seasons that are predisposed for easier transmission are shaded differently. Another big factor from the article that could be important to annotate on the graph is the unsurity of the rate of increase around the New Year due to delay in Covid-19 case reporting, which could be represented by a shaded error area for the rate of increase. Another feature I think would be nice to have is the hospitalization/death rate attributable to Covid-19 or Covid-19 complications, perhaps overlayed. This might be contentious though, as we saw in <a href="https://nb.mit.edu/nb_viewer.html?id=92b8ee70551299aa8fcaf6e50d71b7ea" target="blank">reading group this week</a>. Since we have some lookahead on the reception of death rate, I think it could make sense to report deaths due to respiratory disease/complications, or perhaps deaths of people who were diagnosed with Covid-19. The text on the legend should not overstate the attribution to Covid-19, since the attribution is the contentious part. Nonetheless, since the article intends to "project [sic] the Covid-19 burden," some indication of the metrics they are interested in modeling could be very relevant.</li>
+
+				<li>Since the purpose of the article was to depict changes in Covid-19 transmission due to the emergence of the new variant, I think it would be very important to note the first reported case of the new variant. This could also help contextualize the reader on the topic, since just by looking at the graph, we don't have any idea that the topic of interest is the Omicron variant, and not simply the infection rate trajectory of Covid-19 overall.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Visualization Sketches</h2>
+
+      <figure>
+				<img width="100%" height="100%" src="sketch1.jpeg" alt="Sketch 1" />
+				<figcaption>
+			Timeline of new Covid-19 cases in the United States. The first case of Omicron is marked.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 1:
+			</p>
+
+			<ul>
+				<li>First, I wanted to explore a non-spiral image, while maintaining the focus on the most recent events. I attempted to do this by unwrapping the spiral, and the log-scale would hopefully replicate the scaling of time that was present in the original graph, without creating confusion about the scale of new cases.</li>
+				<li>The time vs. value graph would take very little time to parse through compared to the spiral, since this format (excepting the time scale) would be familiar to most readers. I also think that since the spiral was based on the year, but there weren't many clear monthly/seasonal trends, removing the spiral altogether does not reduce the information conveyed from the original graphic.</li>
+				<li>I added markers to indicate the first reported case of the original Covid-19 strain and Omicron (had to redraw because I messed up the position). I think this really helps clarify what the topic the article and graphic were intended to address.</li>
+			</ul>
+
+			<figure>
+				<img width="100%" height="100%" src="sketch2.jpeg" alt="Sketch 2" />
+				<figcaption>
+			New Covid-19 cases in the United States from outbreak to present. The first case of Omicron is marked.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 2:
+			</p>
+
+			<ul>
+				<li>Next, I wanted to see if I could redesign the spiral to be more visually effective, so I started with the idea of having the width indicating new cases extending only from one side of the spiral. I think this is clearer, and if done in color with the central spiral line in black, would be very visually effective to convey which parts are bigger or smaller. This is more like taking my sketch 1, and rewrapping it into a spiral. I did like that the spiral implied some type of cyclical nature, which would make sense with the lifecycle of a viral outbreak.</li>
+				<li>I kept the first case Omicron marker (also messed up position at first) from my first sketch. Again, I think it helps direct the reader's attention to the new variant, and since the spiral begins with the outbreak of Covid-19, I dropped that marker.</li>
+				<li>I also redesigned the legend to match the change in the graphic.</li>
+			</ul>
+
+			<figure>
+				<img width="100%" height="100%" src="sketch3.jpeg" alt="Sketch 3" />
+				<figcaption>
+			Trajectory of Covid-19 cases in the United States from outbreak to present. The first cases of Covid-19 and of the new Omicron variant are marked.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Rationale for Sketch 3:
+			</p>
+
+			<ul>
+				<li>I scaled the spiral so that the first full turn of the spiral represents the outbreak from first case of Covid-19 in the United States to the first case of Omicron. I think this adds a lot to the context, since the goal of the article is to take the first outbreak and project what Omicron would look like. Also, because the year-on-year line-up of the spiral did not yield significant insights, besides trend of increases of transmission during the winter, I like this organization better. It suggests that maybe the new variant might follow a similar arc, without directly saying so, and prompts the reader to wonder whether or not that is true. </li>
+				<li>I added some background shading to indicate various eras of intervention policy. The smallest growth in cases was around lock-down, which should be an immediate read from the audience, but may benefit from having it plainly stated. Also, I was a proponent of masks and safety precautions, and I think this would help emphasize their effectiveness in reducing new cases.</li>
+				<li>Finally, I kept the graphic being extended from only one side of the spiral. Again, I think it conveys differences in new cases better (it also is easier to see the size from a fixed center line in one direction, rather than seeing some width symmetric across the spiral line).</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Final Visualization Design</h2>
+      
+			<figure>
+				<img width="100%" height="100%" src="a3.png" alt="Final visualization design" />
+				<figcaption>
+          Timeline of Covid-19 and Omicron new cases from each initial outbreak. The first reported cases of Covid-19 and Omicron are marked. New cases are depicted in red and deaths (scaled 100x from new cases) are depicted in blue.
+				</figcaption>
+			</figure>
+
+		</section>
+
+		<section>
+			<h2>Design Process & Design Decisions</h2>
+
+		<p>
+			I used R to plot this, as I recognized ggplot's geom_ribbon for this spiral plot. I wanted to match the original plot in style and depiction but modify it so that I would find it more visually effective. 
+		</p>
+		<p>
+			<strong>Preprocessing</strong>. I started by sanity checking the data. I was most interested in the new counts rather than cumulative, so I replaced negative values with NaNs, then replaced all NaNs with 0. Then I took a 7-day moving average of the new count columns. I also scaled the death count by 100x to make it visible on the same plot.
+		</p>
+		<p>
+			<strong>Plotting</strong>. I started by <a href="" target="blank">recreating the original graphic</a>. I was interested in lining up the outbreaks of Covid-19 and Omicron, so I scaled the spiral so that the first full turn of the spiral represented the time from the first case of Covid-19 in the United States to the first case of Omicron. I think this makes more sense than having each turn represent a year, since the outer years would be longer. In contrast, the spiral now suggests to the reader that the Omicron is a continuation and extension of the Covid-19 outbreak. This may be slightly interpretive outside of the article's intent, since the author does mention that the wave of Omicron cases could be "intense but short-lived." I still think it makes more sense than having each year look like a different scale. Since I took out the neat year coordinate system, I added markers to indicate the start of each year. Finally, I added annotations to first mark the vertical line as the first reported case, then each turn as the corresponding variant. Finally, I had the new case count extend from the outside edge of the line. Since that freed the inner spiral up, space-wise, I decided to add the death count, scaled by 100x for visibility, to the inner spiral. These decisions were incorporated into the legend. I chose to keep the color scheme of the original graphic and chose blue as the opposing color for the death counts for the visual contrast.
+		</p>
+
+      <h3>Reflection</h3>
+
+      <p>
+        I was actually not convinced that the scale of the spiral I wanted was necessarily right. I also tried scaling the second spiral so that it completed the turn in March of 2022, since online sources state that date as marking when Omicron B.2 variant overtook the Omicron B.1 variant discussed in the paper, however I decided not to go with this version since it made the time-scale much harder to interpret. I also debated over scaling new deaths, since it could be misleading on first glance. But I definitely saw the difficulties with using a new schematic to plot the data in an interesting way, since no matter what criteria I used to determine a full turn of the spiral had the effect of stretching the outer turn. I also realized that the background shading I envisioned in my sketches were hard to execute in a clear fashion due to the overlap of the spiral with itself in the radial direction.
+      </p>
+		</section>
+	</main>
+</body>
+</html>
