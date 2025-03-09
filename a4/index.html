@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 3</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 4</small>
+			Persuasive or Deceptive Visualization?
+		</h1>
+
+		<p>
+			<strong>Emily Gan</strong> — <em>emilygan@mit.edu</em>
+		</p>
+	</header>
+
+	<main>
+    <h2>Proposition: The NYPD has a pattern of excessive force motivated by racism. </h2>
+
+		<section>
+			<h3>Methodology</h3>
+			I wanted to keep the data processing and methodology fairly clean and correct and slant the visualization towards either bias simply by showing different, truthful data. This was my goal since I think is more often the case of manipulative design. I dropped unsubstantiated complaints, since the question posed regards real instances, not just reports. I debated whether to keep complaints in which the officer was exonerated, since the README doc states that NYPD often gives officers extreme discretion over force, but decided to drop it to be safe. I also removed complaints for which precinct and/or complainant ethnicity information were unavailable, and for complainant ehtnicity, where it was unknown or refused. I added <a href="https://johnkeefe.net/nyc-police-precinct-and-census-data" target="blank">population racial demographics from 2020</a> per precinct with boundaries for the precincts, and modified my choropleth code from assignment A2 to create the graphics.
+		</section>
+	  <section>
+      <h3>FOR the Proposition</h3>
+
+        <figure>
+			<center>
+				<embed src="pro.html" type="text/html" width="100%" height="650"/>
+			</center>
+			<figcaption>
+				Percentage of all excess force complaints that occur in interracial encounters by precinct. 
+			</figcaption>
+		</figure>
+
+		<p>
+			Design Decisions and Rationale:
+		</p>
+
+		<ul>
+			<li>I chose to plot percentage of complaints in FADO category "Force" in which the member of service's ethnicity differed from the complainant's ethnicity, because this is one interpretation of the ways racism can manifest. I give this a -1 on the deception scale, since there is an element of truth to seeing that excessive force typically occurs in interracial encounters. However, there should be incorporation of the proportion of interracial vs. intraracial encounters. It's possible that some precincts are predominantly one race and policed by another. However, I think not fixing that the member of service must be white is adds to the truthiness, since the proposition asks for patterned racial bias, which is not constricted to white-on-POC action. I think this choice of data really is quite persuasive, since on first glance, the audience sees a swath of yellow and green, which indicates a majority of excessive force complaints occurred between interracial parties.</li>
+			<li>I decided to go with a choropleth, because New York City has extremely strong cultural and socioeconomic associations with regions that residents are familiar with. I would score this decision a 1. In terms of both truthiness and persuasiveness, I think it actually helps contextualize for NYC residents who are familiar with particular neighborhoods and the businesses and establishments. Otherwise, it can also add basically no information. The persuasive power also comes from familiarity with neighborhoods; for example Harlem and the Heights are pretty light-colored and they are also predominantly lower income areas. </li>
+			<li>I chose to add an interactive hover that displays the number of total FADO type "Force" complaints, since the choropleth can mislead by area. For example, precinct 105 and 107 are similar in area but differ in number of complaints. I also thought the hover label with the precinct numbers would be an element of interactivity that allows residents to look specifically at their own precinct, sparking engagement. I think this decision is scored as a 2, since this is a well-acknowledged limitation of choropleths, and I added the missing information. I think this also helps persuade, since we can see that many of the higher scoring regions also have a decent amount of reports they are based on, and the few purple regions are primarily based on few reports.</li>
+		</ul>
+    </section>
+
+    <section>
+      <h3>AGAINST the Proposition</h3>
+
+      <figure>
+
+		<center>
+			<embed src="anti.html" type="text/html" width="100%" height="650"/>
+		</center>
+				<figcaption>
+          	Percentage of all force complaints reported by people of color in excess of their population percentage by precinct. This is calculated as the percentage of complaints of FADO category "Force" by people of color minus the percentage of people of color in the precinct.
+				</figcaption>
+			</figure>
+
+			<p>
+				Design Decisions and Rationale:
+			</p>
+
+			<ul>
+				<li>I chose the metric of percentage of force complaints logged by POC less the percentage of POC in that precinct and I would also give this a -0.5 on the deception scale. This metric is somewhat of a proxy for the excess force against POC per capita, although the deceptive factor is that it does not incorporate the race of the police officers (although I go back and forth on whether is more or less truthful). Now, we do concentrate on POC, since any further or sparser delineations would be harder to plot, and this can obfuscate the truthiness of the race factor, since it does not acknowledge the difference boxes that different races are commonly stereotyped into. I think this choice of data is less persuasive than the first image, since on first glance, the audience sees a more varied overall set of colors, mainly blue and green which are -0.2 to around 0.3 on the color scale.</li>
+				<li>Again, I decided to go with a choropleth for the same reasons as above. I would score this decision a 2. Since the demographic data is also segmented by precinct, I think here it makes more sense to segment into the geographic regions. Again, familiarity with the neighborhoods yields additional persuasive power; for example the Financial District at the southern tip of Manhattan scores highly on the scale and it is also a highly policed and commercial area.</li>
+				<li>I kept the interactive hover that displays the number of total FADO type "Force" complaints for the clarification of total scale and engagement factor. I think this decision is scored as a 2, since this is a well-acknowledged limitation of choropleths, and I added the missing information. I think this also helps persuade, since we can see the extreme scoring regions (yellow and purple)are based on few reports.</li>
+			</ul>
+    </section>
+
+    <section>
+      <h2>Final Reflection</h2>
+
+      <p>I found the most different part of this design process was that my focus was geared towards producing an image that best fit the answer I was looking for, rather than designing a type of image that could answer the question. Hence, I spent more time generating different images from different numerical combinations of the data present in order to produce certain visual effects, instead of thoroughly designing the image generation process. I also realized how easy it was to be misleading just by preprocessing in different ways, all of which have valid justifications. </p>
+
+      <p>I think I came away with the idea that "acceptable" persuasive choices should maintain integrity of the data processing methods. This is most important to me, since what you drop before you produce the numbers that go into the visualization are really important and can change a lot. The README suggested several avenues to take, so I did, but these are not required things to report, nor do many pay much attention to the data preprocessing, before any statistics are even computed. I personally did not choose very complex visualizations that messed with scale, and I think that was part of where I drew the line in my head. Since the issue is multifaceted, if I look at the corresponding visualization and find it oversimplistic and leading, I think it is misleading. However, this obviously relies on a strong prior, which may or may not be correct. </p>
+    </section>
+	</main>
+</body>
+</html>
